@@ -1,0 +1,490 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+.Order {
+    height: 100vh;
+    background: rgb(255, 255, 255);
+    .HeaderOrder {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        height: 80px;
+        backdrop-filter: blur(40px);
+        background-color: rgb(238, 238, 238);
+        padding: 30px;
+        z-index: 997;
+        img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+        h1 {
+            color: rgb(0, 0, 0);
+            font-weight: 400;
+        }
+    }
+    .LightBox {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.356);
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: calc(100vh - 180px);
+        overflow: hidden;
+    }
+    .CardApp {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        overflow: hidden;
+        height: calc(100vh - 180px);
+        .CardAppFront {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            position: relative;
+            height: auto;
+            width: 400px;
+            margin-top: 50px;
+
+            .CardNumber {
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                bottom: 50px;
+                left: 40px;
+                color: rgb(105, 105, 105);
+                h4 {
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+                h5 {
+                    font-size: 8px;
+                    font-weight: 300;
+                }
+                h6 {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+            .Chip {
+                position: absolute;
+                top: 65px;
+                left: 40px;
+                width: 50px;
+                height: 43px;
+                opacity: 0.8;
+            }
+            .CardName {
+                position: absolute;
+                bottom: 20px;
+                left: 40px;
+                color: rgb(105, 105, 105);
+                font-weight: 400;
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .CardAppBack {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: auto;
+            position: relative;
+            height: auto;
+            width: 400px;
+            margin-top: 50px;
+
+            .ScanOne {
+                position: absolute;
+                top: 30px;
+                width: 99%;
+                height: 40px;
+                background: linear-gradient(
+                    270deg,
+                    rgba(59, 58, 58, 1) 0%,
+                    rgba(11, 11, 11, 1) 74%,
+                    rgba(0, 0, 0, 0.9607843137254902) 100%
+                );
+            }
+            .ScanTwo {
+                position: absolute;
+                top: 82px;
+                left: 16px;
+                width: 235px;
+                height: 42px;
+                background-color: white;
+            }
+            .CardNumber {
+                display: flex;
+                position: absolute;
+                flex-direction: column;
+                bottom: 53px;
+                left: 20px;
+                color: rgb(125, 125, 125);
+                h4 {
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1;
+                }
+                h5 {
+                    font-size: 8px;
+                    font-weight: 300;
+                }
+                h6 {
+                    line-height: 1.2;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+            .CardName {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                color: rgb(125, 125, 125);
+                font-weight: 400;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .TollBar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        height: auto;
+        width: 100vw;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px -10px 15px rgba(210, 210, 210, 0.356);
+        z-index: 2;
+        .TollBarMenu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 600px;
+            .BtnTollBar {
+                button {
+                    width: 200px;
+                    height: 45px;
+                    border: 1px solid rgb(229, 229, 229);
+                    background: white;
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: gray;
+                    cursor: pointer;
+                }
+                .left {
+                    border-radius: 10px 0px 0px 10px;
+                    background-color: black;
+                    color: white;
+                }
+                .middle {
+                    border-radius: unset;
+                }
+                .right {
+                    border-radius: 0px 10px 10px 0px;
+                }
+            }
+        }
+        .TollBarApp {
+            height: 0px;
+            max-width: 600px;
+            .EditCardInfo {
+                height: auto;
+                h1 {
+                    display: flex;
+                    font-size: 13px;
+                    p{
+                        color: rgb(57, 57, 57);
+                        font-weight: 300;
+                        margin-right: 5px;
+                    }
+                }
+                button:nth-child(even) {
+                    width: 100%;
+                    height: 45px;
+                    border: 1px solid rgb(229, 229, 229);
+                    background: white;
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: #454545;
+                    cursor: pointer;
+                    border-radius: 10px 0px 0px 10px;
+                }
+                button:nth-child(odd) {
+                    width: 100%;
+                    height: 45px;
+                    border: 1px solid rgb(229, 229, 229);
+                    background: rgb(0, 0, 0);
+                    font-weight: 700;
+                    font-size: 15px;
+                    color: rgb(255, 255, 255);
+                    cursor: pointer;
+                    border-radius: 0px 10px 10px 0px;
+                }
+                .CardHolderName {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 75px;
+                    input {
+                        width: 100%;
+                        height: 50px;
+                        border: 1px solid rgb(233, 233, 233);
+                        border-radius: 10px;
+                        padding-right: 10px;
+                        outline: none;
+                        font-size: 17px;
+                    }
+                    input:focus::placeholder {
+                        color: transparent;
+                    }
+                }
+                .CardNameSide {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 75px;
+                    margin-top: 20px;
+                    div {
+                        display: flex;
+                    }
+                }
+                .CardNumberSide {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 75px;
+                    margin-top: 20px;
+                    div {
+                        display: flex;
+                    }
+                }
+            }
+            .ChoseMetal {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                .TitleChoseMetal {
+                    font-size: 14px;
+                    margin-right: 20px;
+                }
+                .BtnColorToChose {
+                    display: flex;
+                    flex-wrap: wrap;
+                    .ColorDiv {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        border: 1px solid rgb(239, 239, 239);
+                        height: 100px;
+                        width: 100px;
+                        border-radius: 10px;
+                        margin: 15px 0px 0px 15px;
+                        cursor: pointer;
+                        h1 {
+                            font-size: 13px;
+                            font-weight: 400;
+                        }
+                        h2 {
+                            font-size: 11px;
+                            font-weight: 400;
+                            color: rgb(105, 105, 105);
+                        }
+                        .Silver,
+                        .Black,
+                        .Gold,
+                        .Rosegold {
+                            width: 35px;
+                            height: 35px;
+                            border-radius: 50px;
+                            border: none;
+                            transition: none;
+                            margin: 5px;
+                        }
+                        .Silver {
+                            background: linear-gradient(
+                                0deg,
+                                rgba(48, 48, 48, 1) 0%,
+                                rgba(198, 197, 200, 1) 50%,
+                                rgba(48, 48, 48, 1) 100%
+                            );
+                        }
+                        .Black {
+                            background: linear-gradient(
+                                0deg,
+                                rgba(0, 0, 0, 1) 0%,
+                                rgba(52, 52, 52, 1) 50%,
+                                rgba(0, 0, 0, 1) 100%
+                            );
+                        }
+                        .Gold {
+                            background: linear-gradient(
+                                0deg,
+                                rgba(0, 0, 0, 1) 0%,
+                                rgba(255, 215, 0, 1) 55%,
+                                rgba(0, 0, 0, 0.9093137254901961) 100%
+                            );
+                        }
+                        .Rosegold {
+                            background: linear-gradient(
+                                0deg,
+                                rgba(0, 0, 0, 1) 0%,
+                                rgba(183, 110, 121, 1) 46%,
+                                rgba(0, 0, 0, 0.9607843137254902) 100%
+                            );
+                        }
+                    }
+                    .ColorDiv:hover {
+                        border: 1px solid rgb(200, 200, 200);
+                        .Silver,
+                        .Black,
+                        .Gold,
+                        .Rosegold {
+                            border: 2px solid rgb(188, 188, 188);
+                        }
+                    }
+                }
+            }
+        }
+        // onClick Toggle This Class
+        .TollBarAppOpen {
+            height: 300px;
+            width: 600px;
+            background-color: rgb(255, 255, 255);
+        }
+        .TotalPrice {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: column;
+            height: 120px;
+            padding-bottom: 20px;
+            h1 {
+                display: flex;
+                color: rgb(98, 98, 98);
+                font-size: 13px;
+                font-weight: 400;
+                p{
+                    margin-right: 5px;
+                }
+            }
+            h2 {
+                color: rgb(30, 30, 30);
+                font-size: 13px;
+                font-weight: 500;
+            }
+            div {
+                width: 600px;
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                height: 30px;
+                padding: 0px 10px;
+            }
+        }
+    }
+}
+@media (max-width: 630px) {
+    .Order {
+        .CardApp {
+            .CardAppFront {
+                width: 300px;
+                .CardNumber {
+                    bottom: 44px;
+                    left: 30px;
+                    h4 {
+                        font-size: 14px;
+                    }
+                    h6 {
+                        font-size: 12px;
+                    }
+                }
+                .Chip {
+                    width: 40px;
+                    height: 30px;
+                    top: 45px;
+                    left: 30px;
+                }
+                .CardName {
+                    bottom: 12px;
+                    left: 30px;
+                }
+            }
+            .CardAppBack {
+                width: 300px;
+                .ScanOne {
+                    height: 35px;
+                }
+                .ScanTwo {
+                    width: 170px;
+                    height: 35px;
+                    top: 75px;
+                    left: 12px;
+                }
+                .CardNumber {
+                    bottom: 18px;
+                    left: 17px;
+                    h4 {
+                        font-size: 14px;
+                    }
+                    h6 {
+                        font-size: 12px;
+                    }
+                }
+                .CardName {
+                    bottom: 20px;
+                    left: 230px;
+                    color: rgb(69, 69, 69);
+                    font-weight: 400;
+                }
+            }
+        }
+        .TollBar {
+            .TollBarMenu {
+                width: 90%;
+                .BtnTollBar {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    button {
+                        font-size: 9px;
+                    }
+                }
+            }
+            .TollBarApp {
+                width: 90%;
+                .ChoseMetal {
+                    .TitleChoseMetal{
+                        margin: 0;
+                    }
+                    .BtnColorToChose {
+                        .ColorDiv {
+                            width: 1fr;
+                        }
+                    }
+                }
+            }
+            .TotalPrice{
+                display: flex;
+                width: 90%;
+                div{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

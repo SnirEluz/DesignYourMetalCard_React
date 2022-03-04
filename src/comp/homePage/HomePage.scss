@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Heebo;
+}
+
+.HomePage {
+    .SectionOne {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: column;
+        // background-image: url("./image/metalCard.png");
+        // background-attachment: scroll;
+        // background-size: 550px;
+        // background-repeat: no-repeat;
+        // background-position: 50% 10%;
+        // background-color: black;
+        transform: translateZ(-600) scale(3);
+        height: 800px;
+        z-index: 1;
+        img {
+            width: 550px;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 70px;
+            line-height: 1.1;
+        }
+        h5 {
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 400;
+            margin-top: 30px;
+        }
+        .Btn {
+            button {
+                width: 200px;
+                height: 50px;
+                border-radius: 30px;
+                margin: 30px 10px 30px 10px;
+                border: 1px solid white;
+                background-color: initial;
+                color: white;
+                font-size: 18px;
+            }
+        }
+        .Fade {
+            height: 20vh;
+            width: 100vw;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+    .SectionTwo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 50vh;
+        background-color: black;
+        h1 {
+            color: white;
+            text-align: center;
+            font-size: 50px;
+            line-height: 1.1;
+        }
+        .images {
+            display: flex;
+            align-items: center;
+            overflow: auto;
+            width: 100%;
+            height: 300px;
+            img {
+                width: 300px;
+                margin: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 590px) {
+    .HomePage {
+        .SectionOne {
+            padding: 0px 20px;
+            background-size: 350px;
+            h1 {
+                font-size: 32px;
+            }
+            img{
+                width: 350px;
+            }
+            h5 {
+                font-size: 18px;
+                margin-bottom: 30px;
+                color: rgb(222, 222, 222);
+            }
+            .Btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                button:nth-child(odd) {
+                    margin: 10px 10px 20px 10px;
+                    width: 270px;
+                    background-color: white;
+                    color: black;
+                }
+                button:nth-child(even) {
+                    margin: 10px 10px 20px 10px;
+                    width: 270px;
+                }
+            }
+
+            .Fade{
+                height: 100px;
+            }
+        }
+        .SectionTwo{
+            .images{
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            h1{
+                align-items: center;
+                font-size: 25px;
+            }
+
+        }
+    }
+}
